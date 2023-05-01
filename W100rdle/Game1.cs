@@ -8,6 +8,7 @@ namespace W100rdle
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private Point GameBounds = new Point(600, 720); //window resolution
 
         public Game1()
         {
@@ -18,7 +19,10 @@ namespace W100rdle
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            _graphics.IsFullScreen = false;
+            _graphics.PreferredBackBufferWidth = GameBounds.X;
+            _graphics.PreferredBackBufferHeight = GameBounds.Y;
+            _graphics.ApplyChanges();
 
             base.Initialize();
         }
